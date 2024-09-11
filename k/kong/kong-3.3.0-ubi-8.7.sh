@@ -51,7 +51,8 @@ dnf install -y \
     java-11-openjdk-devel \
     tzdata-java \
     curl \
-    file
+    file \
+    libffi-devel
 
 wdir=`pwd`
 #Set environment variables
@@ -103,9 +104,9 @@ cargo install cross --version 0.2.1
 
 #Install Golang
 cd $wdir
-wget https://go.dev/dl/go1.20.5.linux-ppc64le.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.5.linux-ppc64le.tar.gz
-rm -rf go1.20.5.linux-ppc64le.tar.gz
+wget https://go.dev/dl/go1.23.1.linux-ppc64le.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.1.linux-ppc64le.tar.gz
+rm -rf go1.23.1.linux-ppc64le.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 go version
 go install github.com/go-task/task/v3/cmd/task@latest
